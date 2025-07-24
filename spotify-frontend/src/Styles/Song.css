@@ -1,0 +1,41 @@
+.song-card {
+    display: flex;
+    margin: 1%;
+    background-color: var(--mid-gray);
+    border-radius: 8px;
+    gap: 1rem;
+    align-items: center;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.song-card:hover{
+    transform: scale(1.05);
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 2%;
+}
+
+.song-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.song-album {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+.song-image{
+    border-radius: 8px 0px 0px 8px;
+    width:100px;
+}
+
+.song-duration{
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}

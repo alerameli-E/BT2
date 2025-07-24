@@ -1,0 +1,172 @@
+:root {
+  --spotify-green: #1db954;
+  --spotify-black: #191414;
+  --spotify-gray: #b3b3b3;
+}
+
+.artist-main-container {
+  display: flex;
+  height: 100vh;
+  background-color: var(--spotify-black);
+  color: white;
+  gap: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Left section */
+.artist-section-1,
+.artist-section-2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.artist-information {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem;
+  margin-bottom: 3%;
+  height: auto;
+  text-align: left;
+  justify-content: center;
+}
+
+.artist-information img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.artist-info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-info-text h1 {
+  margin: 0 0 0.5rem 0;
+}
+
+.artist-info-text p {
+  color: var(--spotify-gray);
+  margin: 0.3rem 0;
+}
+
+/* Top Songs */
+
+.artist-top-songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+  gap: 1rem;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.artist-top-songs {
+  margin-top: 2rem;
+  height: 70%;
+}
+
+.artist-top-songs h2 {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--spotify-green);
+  padding-bottom: 0.5rem;
+}
+
+/* Albums */
+.artist-albums {
+  height: 50%;
+}
+
+.artist-albums h2 {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--spotify-green);
+  padding-bottom: 0.5rem;
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  overflow: auto;
+  height: 80%;
+  padding: 2%;
+}
+
+/*Selected album*/
+
+.selected-album-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--spotify-green);
+  padding: 0.8rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.album-title-date {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.album-title-date h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.album-date {
+  font-size: 0.9rem;
+  color: var(--spotify-gray);
+  font-weight: 400;
+}
+
+.album-metadata {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--spotify-gray);
+  align-items: center;
+  font-weight: 400;
+}
+
+
+
+.selected-album-content {
+  display: flex;
+}
+
+.album-songs {
+  height: 50%;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+
+  animation: fadeIn 0.5s ease-in;
+}
+
+.selected-album-content img {
+  width: 280px;
+  height: 280px;
+  border-radius: 8px;
+}
+
+.table-container {
+  height: 280px;
+  overflow: auto;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

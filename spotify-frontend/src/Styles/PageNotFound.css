@@ -1,0 +1,35 @@
+.pnf{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--spotify-black);
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 2rem;
+}
+
+.pnf-icon-container{
+    color: var(--spotify-green);
+}
+
+.pnf-icon{
+    height: 10rem;
+    width: 10rem;
+}
+
+.pnf-button{
+    padding:1.5rem;
+    font-size: large;
+    background-color: var(--spotify-green);
+    border: 1px solid var(--spotify-green);
+    border-radius: 50px;
+    width: 30%;
+    color: white;
+    cursor: pointer;
+}
+
+.pnf-button:hover{
+    background-color: var(--hover-spotify-green);
+}

@@ -1,0 +1,25 @@
+.nav-bar{
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 0.5%;
+    justify-content: space-between;
+}
+
+.nav-bar img{
+    margin: 0% 2%;
+}
+
+.nav-bar-title{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar-profile{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar-profile-image{
+    border-radius: 50px;
+}

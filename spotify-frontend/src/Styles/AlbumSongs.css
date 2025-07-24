@@ -1,0 +1,47 @@
+.songs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: inherit;
+    color: white;
+}
+
+.songs-table thead {
+    background-color: rgba(255, 255, 255, 0.05);
+    text-align: left;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--spotify-gray);
+}
+
+.songs-table th,
+.songs-table td {
+    padding: 0.75rem 1rem;
+}
+
+.songs-table tbody tr {
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.songs-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.songs-table td {
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
+.songs-table td:first-child {
+    font-weight: 500;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}ß
+
+.songs-table td:last-child {
+    text-align: right;
+    color: var(--spotify-gray);
+}

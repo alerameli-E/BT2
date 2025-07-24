@@ -1,0 +1,19 @@
+# Frontend
+spotify-frontend/node_modules/
+spotify-frontend/.env
+spotify-frontend/dist/
+spotify-frontend/.DS_Store
+
+# Backend
+Spotify-Backend/.env
+Spotify-Backend/build/
+Spotify-Backend/.gradle/
+Spotify-Backend/.DS_Store
+
+# General
+.DS_Store
+.idea/
+.vscode/
+*.log
+*.tsbuildinfo
+.env

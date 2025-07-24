@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    --spotify-green: #1DB954;
+    --spotify-black: #191414;
+    --soft-black: #121212;
+    --text-white: #FFFFFF;
+    --text-gray: #B3B3B3;
+    --hover-spotify-green:#1AA34A;
+    --mid-gray: #535353;
+  }
+  
