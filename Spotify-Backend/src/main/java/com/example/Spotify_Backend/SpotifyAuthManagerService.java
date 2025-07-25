@@ -21,6 +21,9 @@ public class SpotifyAuthManagerService {
 
     @Value("${spotify.client.secret}")
     private String clientSecret;
+    
+    @Value("${spotify.redirect.uri}")
+    private String redirect_uri;
 
     private final WebClient webClient = WebClient.create();
     private final SpotifySessionStore sessionStore = new SpotifySessionStore();
@@ -37,7 +40,7 @@ public class SpotifyAuthManagerService {
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_FORM_URLENCODED_VALUE)
                 .body(BodyInserters.fromFormData("grant_type", "authorization_code")
                         .with("code", code)
-                        .with("redirect_uri", "http://127.0.0.1:5173/callback"))
+                        .with("redirect_uri", redirect_uri))
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<Map<String, Object>>() {
                 })

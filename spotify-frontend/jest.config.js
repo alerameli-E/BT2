@@ -4,7 +4,7 @@ module.exports = {
   testEnvironment: 'jest-environment-jsdom',
   globals: {
     'ts-jest': {
-      tsconfig: 'tsconfig.jest.json', // 👈 ¡clave!
+      tsconfig: 'tsconfig.jest.json',
     },
   },
   moduleNameMapper: {

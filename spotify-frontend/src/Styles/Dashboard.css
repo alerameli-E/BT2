@@ -200,26 +200,92 @@
 
 
   /* RESPONSIVE DESIGN */
-  @media (max-width: 768px) {
-      .dashboard-content {
-          flex-direction: column;
-          overflow-y: auto;
-      }
+  @media (max-width: 900px) {
 
-      .dashboard-first-section,
-      .dashboard-second-section {
-          width: 100%;
-          height: auto;
-      }
+    .dashboard-page {
+        height: auto;
+    }
+    .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        flex-wrap: nowrap;
+        gap: 1rem;
+    }
 
-      .dashboard-search-input {
-          width: 70%;
-      }
+    .nav-bar-title,
+    .nav-bar-profile img {
+        display: none;
+    }
 
-      .dashboard-ts-grid {
-          grid-template-columns: 1fr;
-      }
-  }
+    .dashboard-search-section {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .dashboard-search-input,
+    .dashboard-search-home-button,
+    .dashboard-search-button {
+        height: 2.5rem;
+    }
+
+    .dashboard-search-input {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+    }
+
+    .nav-bar-profile {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .dashboard-content {
+        flex-direction: column;
+        overflow: auto;
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .dashboard-first-section,
+    .dashboard-second-section,
+    .dashboard-ta-section,
+    .dashboard-albums-section,
+    .dashboard-ts-section {
+        height: auto;
+        width: 100%;
+    }
+
+    .dashboard-ta-section {
+        height: auto;
+    }
+
+    .dashboard-ta-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        overflow: auto;
+        height: auto;
+    }
+
+    .dashboard-albums-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        overflow: hidden;
+        height: auto;
+    }
+
+    .dashboard-ts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
 
   @keyframes fadeIn {
       from {

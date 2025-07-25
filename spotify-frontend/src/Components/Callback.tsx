@@ -30,7 +30,7 @@ const Callback: React.FC = () => {
 
         if (code) {
             const sessionId = crypto.randomUUID()
-            axios.post('http://localhost:8080/auth/spotify', { code, sessionId })
+            axios.post('http://127.0.0.1:9090/auth/spotify', { code, sessionId })
                 .then(() => {
                     localStorage.setItem("sessionId", sessionId)
                     navigate("/");

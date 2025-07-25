@@ -30,7 +30,6 @@ public class SpotifyService {
                 .retrieve()
                 .onStatus(HttpStatus.UNAUTHORIZED::equals, response -> {
                     if (attempt == 0) {
-                        // Retry after refresh
                         return spotifyAuthManagerService.refresh(sessionId)
                                 .flatMap(refreshed -> {
                                     String newToken = (String) refreshed.get("access_token");
@@ -39,7 +38,7 @@ public class SpotifyService {
 
                                     return processInformation(URL, session, sessionId, 1);
                                 })
-                                .then(Mono.empty()); // Block actual error signal until retry
+                                .then(Mono.empty()); 
                     }
                     return Mono.error(new RuntimeException("Unauthorized after retry"));
                 })

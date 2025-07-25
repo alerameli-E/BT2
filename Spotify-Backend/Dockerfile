@@ -9,7 +9,7 @@ WORKDIR /app
 COPY build/libs/app.jar app.jar
 
 # Expón el puerto 8080 (Spring Boot por default)
-EXPOSE 8080
+EXPOSE 9090
 
 # Comando para ejecutar la app
 ENTRYPOINT ["java", "-jar", "app.jar"]

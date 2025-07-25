@@ -143,7 +143,7 @@ const DashBoard = () => {
             <div className="nav-bar">
                 <div className="nav-bar-title">
                     <img src="spotifyLogo.png" width="10%" />
-                    <h3>Spotify ++</h3>
+                    <h3>Spotify --</h3>
                 </div>
                 <div className="dashboard-search-section">
                     {activeSearching && (
