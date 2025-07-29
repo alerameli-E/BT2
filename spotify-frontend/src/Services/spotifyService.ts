@@ -1,10 +1,11 @@
 import axios from "axios";
-import { BASE_URL } from "../config";
 
+const BASE_URL= 'http://127.0.0.1:9090'
 
 const callAPI = async (path: string, sessionId: string) => {
     try {
         const headers = { sessionId };
+        console.log(`${BASE_URL}${path}`)
         const response = await axios.get(`${BASE_URL}${path}`, { headers });
         return response;
     } catch (error: any) {

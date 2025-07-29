@@ -44,7 +44,7 @@ public class SpotifyServiceTest {
 
     @BeforeEach
     void setUp() {
-        spotifyAuthManagerService = new SpotifyAuthManagerService(webClient);
+        spotifyAuthManagerService = new SpotifyAuthManagerService((WebClient.Builder) webClient);
         spotifyAuthManagerService.setStoredSessions(new ConcurrentHashMap<>());
     }
 

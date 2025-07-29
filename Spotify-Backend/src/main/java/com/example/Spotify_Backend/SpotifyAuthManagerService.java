@@ -21,15 +21,15 @@ public class SpotifyAuthManagerService {
 
     @Value("${spotify.client.secret}")
     private String clientSecret;
-    
+
     @Value("${spotify.redirect.uri}")
     private String redirect_uri;
 
     private final WebClient webClient;
-    
-    public SpotifyAuthManagerService(WebClient webClient) {
-    this.webClient = webClient;
-}
+
+    public SpotifyAuthManagerService(WebClient.Builder webClientBuilder) {
+        this.webClient = webClientBuilder.build();
+    }
 
     ConcurrentHashMap<String, SpotifySession> storedSessions = new ConcurrentHashMap<>();
 
@@ -61,23 +61,23 @@ public class SpotifyAuthManagerService {
 
                 });
     }
-    
-    public void printActiveSessions(){
+
+    public void printActiveSessions() {
         System.out.println("********** STORAGED SESSIONS ************");
         for (Entry<String, SpotifySession> entry : storedSessions.entrySet()) {
-                        System.out.println("Session ID: " + entry.getKey());
-                        System.out.println("Access Token: " + entry.getValue().getAccessToken());
-                        System.out.println("Refresh Token: " + entry.getValue().getRefreshToken());
-                        System.out.println("***************************************");
-                    }
+            System.out.println("Session ID: " + entry.getKey());
+            System.out.println("Access Token: " + entry.getValue().getAccessToken());
+            System.out.println("Refresh Token: " + entry.getValue().getRefreshToken());
+            System.out.println("***************************************");
+        }
     }
 
     public Mono<Map<String, Object>> refresh(String sessionId) {
-        
+
         printActiveSessions();
 
         System.out.println("The refresher has been used");
-        
+
         SpotifySession session = storedSessions.get(sessionId);
 
         if (session == null) {
@@ -101,7 +101,7 @@ public class SpotifyAuthManagerService {
                     String newAccessToken = (String) response.get("access_token");
                     session.setAccessToken(newAccessToken);
                     storedSessions.put(sessionId, session);
-                    
+
                     System.out.println("The refresher has got a new token");
 
                 });
@@ -113,11 +113,10 @@ public class SpotifyAuthManagerService {
 
     public boolean logout(String sessionId) {
         printActiveSessions();
-        System.out.println("Session "+sessionId+" deleted");
+        System.out.println("Session " + sessionId + " deleted");
         return storedSessions.remove(sessionId) != null;
     }
 
-    
     public void setStoredSessions(ConcurrentHashMap<String, SpotifySession> storedSessions) {
         this.storedSessions = storedSessions;
     }
