@@ -31,6 +31,7 @@ public class AuthorizationController {
         }
     }
 
+    /*
     @PostMapping("/auth/spotify/refresh")
     public Mono<Map<String, Object>> refreshToken(@RequestBody Map<String, String> body) {
         String sessionId = body.get("sessionId");
@@ -40,6 +41,7 @@ public class AuthorizationController {
             return Mono.error(e);
         }
     }
+*/
 
     @DeleteMapping("/auth/spotify/logOut/{sessionId}")
     public ResponseEntity<Void> logOut(@PathVariable String sessionId) {

@@ -25,10 +25,13 @@ public class SpotifyAuthManagerService {
     @Value("${spotify.redirect.uri}")
     private String redirect_uri;
 
-    private final WebClient webClient = WebClient.create();
-    private final SpotifySessionStore sessionStore = new SpotifySessionStore();
+    private final WebClient webClient;
+    
+    public SpotifyAuthManagerService(WebClient webClient) {
+    this.webClient = webClient;
+}
 
-    private final ConcurrentHashMap<String, SpotifySession> storedSessions = new ConcurrentHashMap<>();
+    ConcurrentHashMap<String, SpotifySession> storedSessions = new ConcurrentHashMap<>();
 
     public Mono<Map<String, Object>> authenticate(String code, String sessionId) {
 
@@ -51,7 +54,6 @@ public class SpotifyAuthManagerService {
                     int expires = (int) response.get("expires_in");
 
                     SpotifySession session = new SpotifySession(accessToken, refreshToken, expires);
-                    sessionStore.saveSession(sessionId, session);
 
                     storedSessions.put(sessionId, session);
 
@@ -98,7 +100,7 @@ public class SpotifyAuthManagerService {
 
                     String newAccessToken = (String) response.get("access_token");
                     session.setAccessToken(newAccessToken);
-                    sessionStore.saveSession(sessionId, session);
+                    storedSessions.put(sessionId, session);
                     
                     System.out.println("The refresher has got a new token");
 
@@ -115,4 +117,8 @@ public class SpotifyAuthManagerService {
         return storedSessions.remove(sessionId) != null;
     }
 
+    
+    public void setStoredSessions(ConcurrentHashMap<String, SpotifySession> storedSessions) {
+        this.storedSessions = storedSessions;
+    }
 }

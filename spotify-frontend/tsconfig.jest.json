@@ -1,6 +1,8 @@
 {
     "extends": "./tsconfig.app.json",
     "compilerOptions": {
+        "module": "es2020", 
+        "target": "esnext",
         "jsx": "react-jsx",
         "types": [
             "jest",
