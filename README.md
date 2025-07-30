@@ -79,6 +79,7 @@ SPOTIFY_CLIENT_ID=your_spotify_client_id
 SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
 REDIRECT_URI=http://127.0.0.1:8080/callback
 ```
+To get the Spotify client ID and Spotify secret, it must be created an app at spotify page for developers at https://developer.spotify.com/dashboard. When creating the app, in the field Redirect URI, set: http://127.0.0.1:8080/callback. Then the client ID and client secret can be found on top of the form. The name of the variables in .env document must be the same as shown in the example. 
 
 ## Technologies Used
 - Frontend: React, TypeScript, Docker
