@@ -1,5 +1,5 @@
 
-#  Spotify Session Manager
+#  Spotify API
 
 This project is a **full stack application** that integrates with the **Spotify Web API** to authenticate users, display personalized information, and allow exploration of musical content. It implements OAuth authentication, a user dashboard, artist and album navigation, search functionality, and secure session management.
 
