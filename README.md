@@ -70,6 +70,16 @@ public class SpotifySession {
 
 This object holds the access and refresh tokens along with their expiration time, allowing secure and efficient session handling.
 
+## Enviorment variables
+
+This project uses environment variables to store sensitive information such as API keys and secrets. These variables are defined in a .env file located at the backend folder.
+
+```bash
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+REDIRECT_URI=http://127.0.0.1:8080/callback
+```
+
 ## Technologies Used
 - Frontend: React, TypeScript, Docker
 - Backend: Java, Spring Boot, Gradle, Docker
